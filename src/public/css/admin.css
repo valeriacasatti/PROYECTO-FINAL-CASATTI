@@ -1,0 +1,36 @@
+h1 {
+  margin-top: 6rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.text {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h3,
+.userView {
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 1rem;
+  margin-inline: 2rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}

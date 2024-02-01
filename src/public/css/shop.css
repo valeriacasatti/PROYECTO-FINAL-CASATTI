@@ -1,0 +1,81 @@
+h1 {
+  margin-top: 7rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.page {
+  margin-bottom: 5rem;
+}
+
+p {
+  text-align: center;
+  font-size: large;
+  margin-bottom: 3rem;
+}
+
+.div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-inline: 8rem;
+  padding-bottom: 2rem;
+}
+
+.img img {
+  width: 8rem;
+  height: 10rem;
+}
+
+.product {
+  text-align: left;
+  width: 30%;
+}
+
+.product h2 {
+  text-transform: uppercase;
+  font-size: larger;
+  margin-bottom: 1rem;
+}
+
+button {
+  font-size: small;
+  background-color: transparent;
+  border: 1px solid black;
+  margin-top: 1rem;
+  padding-block: 7px;
+  padding-inline: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.addToCart:disabled {
+  display: none;
+}
+
+.links {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+.links a {
+  margin-inline: 2rem;
+}
+.links a:hover {
+  font-weight: bolder;
+}
+
+.outOfStock {
+  margin-top: 5px;
+  font-size: small;
+  color: tomato;
+  text-align: left;
+}

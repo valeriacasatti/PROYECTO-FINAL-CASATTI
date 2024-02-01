@@ -1,0 +1,31 @@
+<h1>add products</h1>
+<div class="product">
+
+  <form
+    id="addProductForm"
+    action="/api/products"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <input type="text" placeholder="title" name="title" />
+    <br />
+    <input type="text" placeholder="description" name="description" />
+    <br />
+    <input type="number" placeholder="price" name="price" />
+    <br />
+    <input type="text" placeholder="code" name="code" />
+    <br />
+    <input type="number" placeholder="stock" name="stock" />
+    <br />
+    <input type="text" placeholder="status" name="status" />
+    <br />
+    <input type="text" placeholder="category" name="category" />
+    <br />
+    <input type="file" name="thumbnail" />
+    <br />
+    <button class="addProductButton">create</button>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/js/addProducts.js"></script>

@@ -1,0 +1,44 @@
+.home {
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.div {
+  margin-inline: 10rem;
+}
+
+h1 {
+  margin-top: 5rem;
+  text-transform: uppercase;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 2rem;
+}
+
+.h5 {
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+.ul {
+  list-style-type: none;
+  margin-bottom: 3rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.contact {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.img {
+  width: 2rem;
+  margin-inline: 5px;
+}

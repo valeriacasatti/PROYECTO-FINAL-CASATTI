@@ -1,0 +1,15 @@
+<div class="div">
+  <h1>{{product.title}}</h1>
+  <div class="detail">
+    <img src="{{product.thumbnail}}" alt="{{product.title}}" />
+    <div class="detailText">
+      <h4>{{product.description}}</h4>
+      <h5>${{product.price}}</h5>
+      <h5 class="stock">stock: {{product.stock}}</h5>
+      <button class="addToCart" data-product-id="{{product._id}}">add to cart</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/js/shop.js"></script>

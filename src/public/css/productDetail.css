@@ -1,0 +1,61 @@
+.div {
+  margin-top: 8rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  margin-inline: 10rem;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 18rem;
+}
+
+.detailText {
+  display: block;
+  margin-block: 5rem;
+  margin-left: 3rem;
+}
+
+h4,
+h5,
+h6 {
+  margin-bottom: 2rem;
+}
+
+input {
+  padding-block: 10px;
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid black;
+  margin-block: 1rem;
+  padding-block: 10px;
+  padding-inline: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:not(:disabled):hover {
+  background-color: black;
+  color: white;
+}
+
+.addToCart:disabled {
+  cursor: not-allowed;
+  border: none;
+  padding-inline: 0;
+}

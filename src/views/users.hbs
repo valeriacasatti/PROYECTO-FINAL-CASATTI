@@ -1,0 +1,20 @@
+<div class="div">
+  <h1>users</h1>
+
+  {{#each data}}
+    <div class="user">
+      <h3>name:</h3>
+      <p class="name">{{firstName}} {{lastName}}</p>
+      <h4>email:</h4>
+      <p>{{email}}</p>
+      <h5>role:</h5>
+      <p>{{role}}</p>
+
+      <button class="modify" data-user-id="{{_id}}">change role</button>
+      <button class="delete" data-user-id="{{_id}}">delete user</button>
+    </div>
+  {{/each}}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/js/users.js"></script>

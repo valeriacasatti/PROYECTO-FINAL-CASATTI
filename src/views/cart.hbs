@@ -1,0 +1,36 @@
+<h1>cart</h1>
+<p class="error" id="getCartById">{{error}}</p>
+<div id="container">
+  <div>
+    {{#each cart.products}}
+      <div class="div">
+        <div class="img">
+          <img
+            src="{{{this.productId.thumbnail}}}"
+            alt="{{this.productId.title}}"
+          />
+        </div>
+        <div class="product">
+          <h2>{{this.productId.title}}</h2>
+          <h4 class="price">$ {{this.productId.price}}</h4>
+          <h5 class="quantity">quantity: {{this.quantity}}</h5>
+          <h5 class="total-product"></h5>
+          <button
+            class="deleteProduct"
+            data-product-id="{{this.productId._id}}"
+          >delete</button>
+          <p class="error"></p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div id="total"></div>
+  <div id="purchase">
+    <button class="purchaseButton" data-cart-id="{{cart._id}}">finalize purchase</button>
+    <p id="purchaseError"></p>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/js/cart.js"></script>

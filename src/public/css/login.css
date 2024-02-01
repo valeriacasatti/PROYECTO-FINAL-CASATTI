@@ -1,0 +1,86 @@
+.div {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 12rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+#message {
+  color: mediumseagreen;
+  margin-block: 1rem;
+}
+
+#error {
+  color: tomato;
+  margin-block: 1rem;
+}
+
+#github {
+  font-size: smaller;
+  transition: color 0.3s ease, color 0.3s ease;
+}
+
+#github:hover {
+  color: black;
+  font-weight: bold;
+}
+
+.form {
+  padding-bottom: 2rem;
+}
+
+.form input {
+  padding-block: 8px;
+  margin-block: 5px;
+  width: 60%;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid black;
+  margin-block: 1rem;
+  padding-block: 10px;
+  padding-inline: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.form a {
+  font-size: small;
+  margin-top: 5rem;
+  color: dimgrey;
+  cursor: pointer;
+  transition: color 0.3s ease, color 0.3s ease;
+}
+
+.form a:hover {
+  color: black;
+  font-weight: bold;
+}
+
+.signUp a {
+  font-size: small;
+  text-transform: uppercase;
+  color: dimgrey;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease, color 0.3s ease;
+}
+
+.signUp a:hover {
+  color: black;
+  font-weight: bold;
+}

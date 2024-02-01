@@ -1,0 +1,47 @@
+.div {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  margin-top: 5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.user {
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 2rem;
+}
+
+.user .name {
+  text-transform: capitalize;
+}
+.user h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+button {
+  font-size: small;
+  background-color: transparent;
+  border: 1px solid black;
+  margin-top: 1rem;
+  padding-block: 7px;
+  padding-inline: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modify:hover {
+  background-color: black;
+  color: #c2ffdb;
+}
+.delete:hover {
+  background-color: black;
+  color: #ff1c6f;
+}

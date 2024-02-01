@@ -1,0 +1,25 @@
+<div class="div">
+  <h1>Login</h1>
+  <a id="github" href="/api/sessions/login-github">Log in with Github</a>
+
+  <p id="message">{{message}}</p>
+  <p id="error">{{error}}</p>
+
+  <div class="form">
+    <form id="loginForm">
+      <input type="email" name="email" placeholder="email" />
+      <br />
+      <input type="password" name="password" placeholder="password" />
+      <br />
+      <button>sign in</button>
+    </form>
+    <a href="/forgot-password">Forgot password?</a>
+  </div>
+
+  <div class="signUp">
+    <h4>Don't have an account?</h4>
+    <a href="signup">sign up</a>
+  </div>
+</div>
+
+<script type="module" src="/js/login.js"></script>

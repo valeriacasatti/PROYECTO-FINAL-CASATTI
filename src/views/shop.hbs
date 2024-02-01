@@ -1,0 +1,29 @@
+<h1>shop</h1>
+
+<div class="page">
+  {{#each payload}}
+    <div class="div">
+      <div class="img">
+        <img src="{{this.thumbnail}}" alt="{{this.title}}" />
+      </div>
+      <div class="product">
+        <h2>{{this.title}}</h2>
+        <h4>$ {{this.price}}</h4>
+        <h5 class="stock">stock: {{this.stock}}</h5>
+        <button class="productDetail" data-product-id="{{this._id}}">view more</button>
+        <button class="addToCart" data-product-id="{{this._id}}">add to cart</button>
+      </div>
+    </div>
+  {{/each}}
+  <div class="links">
+    {{#if prevLink}}
+      <a href="{{prevLink}}">prev page</a>
+    {{/if}}
+    {{#if nextLink}}
+      <a href="{{nextLink}}">next page</a>
+    {{/if}}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/js/shop.js"></script>

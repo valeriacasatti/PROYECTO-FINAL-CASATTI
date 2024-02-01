@@ -1,0 +1,449 @@
+paths:
+  /api/carts/:
+    #getCarts
+    get:
+      summary: get all carts
+      tags:
+        - carts
+      responses:
+        200:
+          description: the carts were successfully received
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#components/schemas/carts"
+        500:
+          description: problem on the server
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/getCartError"
+
+    #addCart
+    post:
+      summary: add cart
+      tags:
+        - carts
+      responses:
+        200:
+          description: the cart were successfully received
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#components/schemas/addCartSuccess"
+        500:
+          description: problem on the server
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/addCartError"
+
+  /api/carts/{cid}:
+    #get cart by ID
+    get:
+      summary: get a cart by id
+      tags:
+        - carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID of the cart to consult
+          schema:
+            $type: string
+      responses:
+        200:
+          description: the cart were successfully received
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/carts"
+        500:
+          description: problem on the server
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/getCartError"
+
+    #delete cart
+    delete:
+      summary: remove the cart
+      tags:
+        - carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID of the cart to remove
+          schema:
+            $type: string
+
+      responses:
+        200:
+          description: the cart were successfully removed
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/deleteCartSuccess"
+        500:
+          description: problem on the server
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/deleteCartError"
+
+  /api/carts/{cid}/products/{pid}:
+    #agregar productos al carrito
+    post:
+      summary: add product to cart
+      tags:
+        - carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID of the cart to which I want to add the products
+          schema:
+            $type: string
+        - name: pid
+          in: path
+          required: true
+          description: ID of the product I want to add to the cart
+          schema:
+            $type: string
+      responses:
+        200:
+          description: product added to cart successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/addProductToCartSuccess"
+        500:
+          description: problem on the server
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/addProductCartError"
+
+    #eliminar productos del carrito
+    delete:
+      summary: delete product in cart
+      tags:
+        - carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID of the cart to which I want to remove the products
+          schema:
+            $type: string
+        - name: pid
+          in: path
+          required: true
+          description: ID of the product I want to remove from cart
+          schema:
+            $type: string
+      responses:
+        200:
+          description: product removed to cart successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/deleteProductFromCartSuccess"
+        500:
+          description: problem on the server
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/deleteProductCartError"
+
+    #actualizar productos del carrito
+    put:
+      summary: update product from cart
+      tags:
+        - carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID of the cart to update
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: ID of the product to update
+          schema:
+            type: string
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#components/requestBodies/UpdateProductCart"
+
+      responses:
+        200:
+          description: the product were successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/updateCartSuccess"
+        500:
+          description: problem on the server
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/updateProductCartError"
+
+  /api/carts/{cid}/purchase:
+    post:
+      summary: finalize purchase
+      tags:
+        - carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: ID of the cart that requires to be purchased
+          schema:
+            $type: string
+      responses:
+        200:
+          description: purchase completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/purchaseSuccess"
+        500:
+          description: problem on the server
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/purchaseError"
+
+components:
+  schemas:
+    #cart schema
+    carts:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id generated by Mongo DB
+        products:
+          type: array
+          description: Id generated by Mongo DB of the product in cart
+        __v:
+          type: number
+          description: MongoDB autogenerated property used to store the number of versions of a document
+      example:
+        _id: 65668aac0971f5b665ba8128
+        products: []
+        __v: 0
+
+    #add cart success
+    addCartSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: success
+        message: cart added successfully
+
+    #update cart success
+    updateCartSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: success
+        message: cart updated successfully
+
+    #delete cart success
+    deleteCartSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: success
+        message: cart removed successfully
+
+    #add product to cart success
+    addProductToCartSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: success
+        message: sky skirt added to cart 65668aac0971f5b665ba8128 successfully
+
+    #delete product from cart success
+    deleteProductFromCartSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: success
+        message: sky skirt removed to cart 65668aac0971f5b665ba8128 successfully
+
+    #purchase success
+    purchaseSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        ticket: object
+      example:
+        status: success
+        message: purchase completed successfully
+        ticket:
+          amount: 111
+          code: dc7304fa-5085-4e6b-9b62-7754798d54f8
+          purchaser: valeria.casatti@gmail.com
+          purchase_datetime: Thu Nov 30 2023
+
+    #get cart error
+    getCartError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: error
+        message: error getting the carts
+
+    #add cart error
+    addCartError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: error
+        message: error adding the cart
+
+    #delete cart error
+    deleteCartError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: error
+        message: error deleting the cart
+
+    #add product to cart error
+    addProductCartError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: error
+        message: error adding product to the cart
+
+    #delete product from cart error
+    deleteProductCartError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: error
+        message: error removing product from cart
+
+    #update product from cart error
+    updateProductCartError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: error
+        message: error updating cart product
+
+    #purchase error
+    purchaseError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: error
+        message: error finalizing the purchase
+
+  requestBodies:
+    UpdateProductCart:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Product name
+        description:
+          type: string
+          description: Product description
+        price:
+          type: number
+          description: Product price
+        code:
+          type: string
+          description: Product unique code
+        stock:
+          type: number
+          description: Quantity of products in stock
+        status:
+          type: boolean
+          description: Product status
+        category:
+          type: string
+          description: Indicates whether the product belongs to the category full, top or bottom
+        thumbnail:
+          type: string
+          description: Product image link
+
+      example:
+        title: "Sky Skirt"
+        description: "Denim skirt with front pockets"
+        price: 11000
+        code: "PROD3"
+        stock: 0
+        status: true
+        category: "bottom"
+        thumbnail: "https://res.cloudinary.com/dqrgdohtt/image/upload/v1687800306/skySkirt_dkuofw.jpg"
