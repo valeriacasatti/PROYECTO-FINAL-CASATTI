@@ -16,9 +16,10 @@ import { swaggerSpecs } from "./config/swagger.config.js";
 import swaggerUI from "swagger-ui-express";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { adminRouter } from "./routes/admin.routes.js";
+import { config } from "./config/config.js";
 
 //server
-const port = process.env.port || 8080;
+const port = config.server.port;
 const app = express();
 const httpServer = app.listen(port, () =>
   logger.info(`server running on port ${port}`)

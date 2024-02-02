@@ -3,6 +3,7 @@ dotenv.config();
 
 export const config = {
   server: {
+    port: process.env.PORT || 8080,
     environment: process.env.NODE_ENVIRONMENT,
     secretSession: process.env.SECRET_SESSION,
   },
