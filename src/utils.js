@@ -4,7 +4,6 @@ import { config } from "./config/config.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import multer from "multer";
-import { fstat } from "fs";
 
 export const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -86,7 +85,7 @@ const documentsUpload = multer({
   storage: documentsStorage,
 });
 
-//PRODUCTS
+//products
 //validate required fields
 const productValidFields = (product) => {
   const { title, description, price, code, stock, status, category } = product;

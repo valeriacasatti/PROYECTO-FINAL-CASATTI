@@ -1,14 +1,15 @@
 .div {
-  margin-top: 8rem;
+  margin: 5rem auto;
   align-items: center;
-  margin-bottom: 3rem;
-  margin-inline: 10rem;
+  width: 50%;
 }
 
 h1 {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px black solid;
 }
 
 .detail {
@@ -17,13 +18,13 @@ h1 {
 }
 
 img {
-  width: 18rem;
+  width: 20rem;
 }
 
 .detailText {
   display: block;
   margin-block: 5rem;
-  margin-left: 3rem;
+  margin-left: 4rem;
 }
 
 h4,

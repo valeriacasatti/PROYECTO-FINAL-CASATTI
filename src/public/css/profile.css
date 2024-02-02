@@ -1,12 +1,14 @@
 h1 {
-  margin-top: 15rem;
+  margin-top: 10rem;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-h3,
+h2 {
+  margin-bottom: 3rem;
+}
 #userInfo {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 #userInfo img {
@@ -43,4 +45,21 @@ a:hover {
 .profile {
   padding-bottom: 10rem;
   text-align: center;
+}
+
+button {
+  font-size: small;
+  background-color: transparent;
+  border: 1px solid black;
+  margin-block: 3rem;
+  padding-block: 10px;
+  padding-inline: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
 }

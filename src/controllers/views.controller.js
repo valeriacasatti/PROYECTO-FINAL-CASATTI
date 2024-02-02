@@ -13,7 +13,7 @@ export class ViewsController {
   //shop
   static shop = async (req, res) => {
     try {
-      const { limit = 3, page = 1, sort = { price: 1 } } = req.query;
+      const { limit = 2, page = 1, sort = { price: 1 } } = req.query;
       const query = {};
       const options = {
         limit,
@@ -25,7 +25,6 @@ export class ViewsController {
         query,
         options
       );
-
       const baseUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
       const data = {
         status: "success",

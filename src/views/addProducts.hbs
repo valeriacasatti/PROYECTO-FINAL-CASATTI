@@ -1,27 +1,22 @@
 <h1>add products</h1>
 <div class="product">
 
-  <form
-    id="addProductForm"
-    action="/api/products"
-    method="POST"
-    enctype="multipart/form-data"
-  >
-    <input type="text" placeholder="title" name="title" />
+  <form id="addProductForm" action="/api/products" method="post">
+    <input type="text" placeholder="Title" name="title" />
     <br />
-    <input type="text" placeholder="description" name="description" />
+    <input type="text" placeholder="Description" name="description" />
     <br />
-    <input type="number" placeholder="price" name="price" />
+    <input type="number" placeholder="Price" name="price" />
     <br />
-    <input type="text" placeholder="code" name="code" />
+    <input type="text" placeholder="Code" name="code" />
     <br />
-    <input type="number" placeholder="stock" name="stock" />
+    <input type="number" placeholder="Stock" name="stock" />
     <br />
-    <input type="text" placeholder="status" name="status" />
+    <input type="text" placeholder="Status" name="status" />
     <br />
-    <input type="text" placeholder="category" name="category" />
+    <input type="text" placeholder="Category" name="category" />
     <br />
-    <input type="file" name="thumbnail" />
+    <input type="text" name="thumbnail" placeholder="Image URL" />
     <br />
     <button class="addProductButton">create</button>
   </form>

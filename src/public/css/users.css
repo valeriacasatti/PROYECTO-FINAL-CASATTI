@@ -30,8 +30,8 @@ button {
   background-color: transparent;
   border: 1px solid black;
   margin-top: 1rem;
-  padding-block: 7px;
-  padding-inline: 15px;
+  padding-block: 10px;
+  padding-inline: 30px;
   cursor: pointer;
   text-transform: uppercase;
   transition: background-color 0.3s ease, color 0.3s ease;

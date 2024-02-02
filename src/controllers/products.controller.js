@@ -21,14 +21,8 @@ export class ProductsController {
   //add product
   static addProduct = async (req, res) => {
     try {
-      let productInfo = req.body;
+      const productInfo = req.body;
       productInfo.owner = req.user._id;
-
-      productInfo = {
-        ...productInfo,
-        // thumbnail: req.file.filename,
-      };
-
       const product = await ProductsService.addProduct(productInfo);
       if (product) {
         res.json({
@@ -118,7 +112,6 @@ export class ProductsController {
           message: "product not found",
         });
       }
-
       //user ID
       const ownerId = product.owner;
       const ownerIdString = ownerId.toString();
@@ -129,9 +122,8 @@ export class ProductsController {
           message: "user not found",
         });
       }
-
       //if product belong to a premium user
-      if (ownerIdString == user._id && user.role == "premium") {
+      if (ownerIdString === user._id && user.role === "premium") {
         try {
           const template = (user) => `<h3>Dear ${user.firstName}😊</h3>
             <p>We would like to inform you that the following product, associated with your user ID, has been removed from our ecommerce:</p>
@@ -152,29 +144,28 @@ export class ProductsController {
         } catch (error) {
           res.json({ status: "error", message: error.message });
         }
-
-        //if premium user own the product || admin user
-        if (
-          (req.user.role === "premium" &&
-            product.owner.toString() === req.user._id.toString()) ||
-          req.user.role === "admin"
-        ) {
-          try {
-            const result = await ProductsService.deleteProduct(pid);
-            if (result) {
-              res.json({
-                status: "success",
-                message: "product deleted successfully",
-              });
-            } else {
-              res.json({
-                status: "error",
-                message: `${req.user.fullName} lacks delete permission for this product.`,
-              });
-            }
-          } catch (error) {
-            console.log(error.message);
+      }
+      //if premium user own the product || admin user
+      if (
+        (req.user.role === "premium" &&
+          product.owner.toString() === req.user._id.toString()) ||
+        req.user.role === "admin"
+      ) {
+        try {
+          const result = await ProductsService.deleteProduct(pid);
+          if (result) {
+            res.json({
+              status: "success",
+              message: "product deleted successfully",
+            });
+          } else {
+            res.json({
+              status: "error",
+              message: `${req.user.fullName} lacks delete permission for this product.`,
+            });
           }
+        } catch (error) {
+          console.log(error.message);
         }
       }
     } catch (error) {

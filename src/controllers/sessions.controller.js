@@ -160,7 +160,8 @@ export class SessionsController {
   static failAuth = (req, res) => {
     res.render("login", {
       style: "login.css",
-      error: "invalid token, please authenticate again",
+      error:
+        "Could not parse your authentication token. Please try signing in again",
     });
   };
 

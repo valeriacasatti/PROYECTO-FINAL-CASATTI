@@ -8,6 +8,7 @@ h1 {
 .text {
   text-align: center;
   margin-bottom: 2rem;
+  margin-inline: 10rem;
 }
 
 h3,
@@ -21,10 +22,12 @@ h3,
 }
 
 button {
+  font-size: small;
   background-color: transparent;
   border: 1px solid black;
   cursor: pointer;
-  padding: 1rem;
+  padding-block: 10px;
+  padding-inline: 30px;
   margin-inline: 2rem;
   text-transform: uppercase;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -33,4 +36,9 @@ button {
 button:hover {
   background-color: black;
   color: white;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 10px;
 }

@@ -18,7 +18,7 @@ import { errorHandler } from "./middlewares/errorHandler.js";
 import { adminRouter } from "./routes/admin.routes.js";
 
 //server
-const port = 8080;
+const port = process.env.port || 8080;
 const app = express();
 const httpServer = app.listen(port, () =>
   logger.info(`server running on port ${port}`)
