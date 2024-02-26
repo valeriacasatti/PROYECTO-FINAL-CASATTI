@@ -5,13 +5,13 @@ The application provides a complete e-commerce platform.
 ## Technologies Used
 - Node.js
 - Express.js
-- Mongo DB
+- MongoDB
 - Handlebars
 - Passport
 - Swagger
 - Multer
-- JS
-- CSS
+- JavaScript (JS)
+- Cascading Style Sheets (CSS)
 
 ## Key Features
 - User registration and storage in a database.
